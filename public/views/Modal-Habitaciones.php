@@ -1,0 +1,87 @@
+<?php
+require_once __DIR__ . '/../../autoload.php';
+
+use Api\Controllers\HabitacionController;
+
+$controlador = new HabitacionController();
+$filtros = $controlador->obtenerFiltros();
+?>
+<section>
+  <div id="modalHabitacion" class="modal-habitacion">
+    <div class="modal-contenido-habitacion">
+      <!-- BOTÓN CERRAR -->
+      <button id="cerrarModalHabitacion" class="boton-cerrar-modal">
+        &times;
+      </button>
+
+      <h2 class="titulo-modal-habitacion">Nueva Habitación</h2>
+
+      <form id="formNuevaHabitacion">
+        <div class="fila-formulario">
+          <div class="grupo-formulario">
+            <label for="numeroHabitacion">NÚMERO</label>
+            <input
+              type="text"
+              id="numeroHabitacion"
+              name="numero"
+              placeholder="Ej: 101"
+              required />
+          </div>
+          <div class="grupo-formulario">
+            <label for="tipoHabitacion">TIPO</label>
+            <select id="tipoHabitacion" name="tipo" required>
+              <option value="" disabled selected>Seleccione un tipo</option>
+              <?php if (!empty($filtros['tipos'])): ?>
+                <?php foreach ($filtros['tipos'] as $tipo): ?>
+                  <option value="<?= htmlspecialchars($tipo['id']) ?>">
+                    <?= htmlspecialchars($tipo['tipo']) ?>
+                  </option>
+                <?php endforeach; ?>
+              <?php endif; ?>
+            </select>
+          </div>
+        </div>
+
+        <div class="fila-formulario">
+          <div class="grupo-formulario">
+            <label for="precioHabitacion">PRECIO POR NOCHE (S/)</label>
+            <input
+              type="text"
+              id="precioHabitacion"
+              name="precio"
+              placeholder="0.00"
+              required />
+          </div>
+          <div class="grupo-formulario">
+            <label for="estadoHabitacion">ESTADO</label>
+            <select id="estadoHabitacion" name="estado" required>
+              <option value="" disabled selected>Seleccione estado</option>
+              <option value="Disponible">Disponible</option>
+              <option value="Ocupada">Ocupada</option>
+              <option value="Mantenimiento">Mantenimiento</option>
+              <option value="Reservada">Reservada</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="descripcionHabitacion">DESCRIPCIÓN</label>
+          <textarea
+            id="descripcionHabitacion"
+            name="descripcion"
+            placeholder="Bungalow con vista al río, hamaca, etc."></textarea>
+        </div>
+
+        <div class="acciones-formulario">
+          <button
+            type="button"
+            id="btnCancelarHabitacion"
+            class="btn-secundario">
+            Cancelar
+          </button>
+          <button type="submit" class="btn-primario">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
