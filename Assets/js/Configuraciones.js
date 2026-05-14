@@ -1,7 +1,7 @@
 window.inicializarConfiguraciones = () => {
   const formulario = document.getElementById("formulario");
 
-  fetch("./Api/Controllers/HotelController.php")
+  fetch("./Controllers/HotelController.php")
     .then((res) => res.json())
     .then((hotel) => {
       document.getElementById("nombre").value = hotel.nombre ?? "";
@@ -42,7 +42,7 @@ window.inicializarConfiguraciones = () => {
       "web-redes": document.getElementById("web-redes").value,
     };
 
-    fetch("./Api/Controllers/HotelController.php", {
+    fetch("./Controllers/HotelController.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(datos),

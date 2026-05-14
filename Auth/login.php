@@ -1,6 +1,6 @@
 <?php
 // Cargamos automáticamente las clases del proyecto.
-require_once __DIR__ . '/../autoload.php';
+require_once __DIR__ . '/../Libraries/Core/Autoload.php';
 
 use Controllers\LoginController;
 
@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $usuario = $_POST["usuario"] ?? "";
     $contrasenia = $_POST["contrasena"] ?? "";
 
-    // El controlador valida si el usuario existe y si la contraseña coincide.
     $loginController = new LoginController();
     $resultado = $loginController->login($tipousuario, $usuario, $contrasenia);
 

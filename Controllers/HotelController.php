@@ -6,8 +6,8 @@ require_once '../../autoload.php';
 
 header('Content-Type: application/json');
 
-use Api\Models\HotelDAO;
-use Api\Models\Hotel;
+use Models\HotelDAO;
+use Models\Hotel;
 
 $hotelDAO = new HotelDAO();
 $metodo   = $_SERVER['REQUEST_METHOD'];

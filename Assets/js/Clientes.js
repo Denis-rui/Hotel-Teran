@@ -47,7 +47,7 @@ const renderizarTablaClientes = () => {
 // =============================
 async function cargarClientes() {
   try {
-    const res = await fetch("./Api/Controllers/listarclientes.php");
+    const res = await fetch("./Controllers/listarclientes.php");
     if (!res.ok) {
       throw new Error(`HTTP ${res.status} al cargar clientes`);
     }
@@ -94,7 +94,7 @@ function iniciarClientes() {
 
       const formData = new FormData(form);
 
-      const res = await fetch("./Api/Controllers/registrarcliente.php", {
+      const res = await fetch("./Controllers/registrarcliente.php", {
         method: "POST",
         body: formData,
       });

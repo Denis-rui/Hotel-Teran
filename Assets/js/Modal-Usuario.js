@@ -172,7 +172,7 @@ const abrirModalUsuario = (modo, datosUsuario = null) => {
   const contenedorModal = obtenerContenedorModalUsuario();
   modoFormularioUsuario = modo;
 
-  fetch("./public/views/Modal-Usuario.php")
+  fetch("./Views/Modal-Usuario.php")
     .then((respuesta) => respuesta.text())
     .then((html) => {
       contenedorModal.innerHTML = html;

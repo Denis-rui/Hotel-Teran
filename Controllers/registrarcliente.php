@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../../autoload.php';
 
-use Api\Config\Conexion;
+use Config\Conexion;
 
 header("Content-Type: application/json");
 

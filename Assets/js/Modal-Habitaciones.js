@@ -4,7 +4,7 @@ document.addEventListener("click", (e) => {
 
   // 1. ABRIR MODAL
   if (e.target.id === "btnNuevaHabitacion") {
-    fetch("./public/views/Modal-Habitaciones.php")
+    fetch("./Views/Modal-Habitaciones.php")
       .then((res) => res.text())
       .then((html) => {
         contenedor.innerHTML = html;
@@ -35,7 +35,7 @@ document.addEventListener("submit", async (e) => {
 
     try {
       // Enviamos al archivo enrutador independiente
-      const res = await fetch("./Api/Controllers/habitacionesGuardar.php", {
+      const res = await fetch("./Controllers/habitacionesGuardar.php", {
         method: "POST",
         body: formData,
       });

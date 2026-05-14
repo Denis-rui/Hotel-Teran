@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (yaLogueado) {
     // 🔥 YA HAY NAV → usuario logueado
-    cambiarPagina("app", "./public/views/Dashboard.php");
+    cambiarPagina("app", "./Views/Dashboard.php");
   }
 });
 

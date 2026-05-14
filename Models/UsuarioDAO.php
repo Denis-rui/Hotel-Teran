@@ -40,7 +40,7 @@ class UsuarioDAO
         }
     }
 
-    public function update(string $nombreUsuario, \Api\Models\Usuario $usuario): bool
+    public function update(string $nombreUsuario, \Models\Usuario $usuario): bool
     {
         try {
             $sql = "UPDATE usuario SET 
@@ -63,7 +63,7 @@ class UsuarioDAO
         }
     }
 
-    public function create(\Api\Models\Usuario $usuario): bool
+    public function create(\Models\Usuario $usuario): bool
     {
         try {
             // Obtener id_rol desde el nombre del rol
@@ -126,7 +126,7 @@ class UsuarioDAO
     }
 
 
-    public function updateById(int $id, \Api\Models\Usuario $usuario): bool
+    public function updateById(int $id, \Models\Usuario $usuario): bool
     {
         try {
             // Obtener id_rol desde el nombre del rol

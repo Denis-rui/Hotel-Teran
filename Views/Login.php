@@ -5,7 +5,7 @@
             <h1>Teran Hotel</h1>
         </div>
         <div class="formulario">
-            <form action="./auth/login.php" class="formulario-login" method="post">
+            <form action="./Auth/login.php" class="formulario-login" method="post">
                 <h2>Iniciar Sesión</h2>
                 <div class="tipousuario label-input">
                     <label for="tipousuario">Tipo de Usuario</label>

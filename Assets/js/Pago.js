@@ -4,7 +4,7 @@ const asegurarModalPago = async () => {
   let modal = document.getElementById("modalPago");
   if (modal) return modal;
 
-  const respuesta = await fetch("./public/views/Modal-Pago.php");
+  const respuesta = await fetch("./Views/Modal-Pago.php");
   const html = await respuesta.text();
 
   const wrapper = document.createElement("div");

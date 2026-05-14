@@ -1,13 +1,13 @@
 <?php
 
-namespace Api\Models;
+namespace Models;
 
 class ReservaDAO
 {
     private $conexion;
     public function __construct()
     {
-        $this->conexion = \Api\Config\Conexion::conectar();
+        $this->conexion = \Config\Conexion::conectar();
     }
 
     public function obtenerReservas()

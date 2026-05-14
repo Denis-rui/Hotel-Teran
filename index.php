@@ -1,13 +1,14 @@
 <?php
 session_start();
+$baseUrl = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/') . '/';
 ?>
-
 <!doctype html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="<?php echo htmlspecialchars($baseUrl, ENT_QUOTES, 'UTF-8'); ?>" />
     <link rel="icon" href="./Assets/img/image.jpeg" />
     <title>Hotel Teran</title>
     <link rel="stylesheet" href="./style.css" />

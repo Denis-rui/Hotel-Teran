@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/../../autoload.php';
 
-use Api\Config\Conexion;
-use Api\Controllers\ClienteController;
+use Config\Conexion;
+use Controllers\ClienteController;
 
 $conexion = Conexion::conectar();
 $controller = new ClienteController($conexion);

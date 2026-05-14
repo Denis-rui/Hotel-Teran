@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\Models;
+namespace Models;
 
 class HotelDAO
 {
@@ -8,7 +8,7 @@ class HotelDAO
 
     public function __construct()
     {
-        $this->con = \Api\Config\Conexion::conectar();
+        $this->con = \Config\Conexion::conectar();
     }
 
     public function read(): array|false

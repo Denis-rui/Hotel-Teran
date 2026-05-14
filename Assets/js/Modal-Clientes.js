@@ -121,7 +121,7 @@ const abrirModalCliente = (modo, datos = null) => {
   modoFormularioCliente = modo;
   const contenedor = obtenerContenedorModalCliente();
 
-  fetch("./public/views/Modal-Clientes.php")
+  fetch("./Views/Modal-Clientes.php")
     .then((res) => res.text())
     .then((html) => {
       contenedor.innerHTML = html;
@@ -144,7 +144,7 @@ const cerrarModalCliente = () => {
 window.abrirModalCliente = abrirModalCliente;
 window.cerrarModalCliente = cerrarModalCliente;
 window.registrarClienteNuevo = (datos) => {
-  fetch("./controllers/registrarcliente.php", {
+  fetch("./Controllers/registrarcliente.php", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(datos).toString(),

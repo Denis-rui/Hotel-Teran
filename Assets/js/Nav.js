@@ -17,9 +17,9 @@ document.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (viewEscogido === "cerrar-sesion") {
-    window.location.href = "./Api/auth/logout.php";
+    window.location.href = "./Auth/logout.php";
     return;
   } else {
-    window.cambiarPagina?.("app", `./public/views/${viewEscogido}.php`);
+    window.cambiarPagina?.("app", `./Views/${viewEscogido}.php`);
   }
 });

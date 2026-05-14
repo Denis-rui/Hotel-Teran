@@ -4,8 +4,8 @@ header('Content-Type: application/json');
 
 require_once __DIR__ . '/../../autoload.php';
 
-use Api\Models\UsuarioDAO;
-use Api\Models\Usuario;
+use Models\UsuarioDAO;
+use Models\Usuario;
 
 $usuarioDAO = new UsuarioDAO();
 $metodo     = $_SERVER['REQUEST_METHOD'];

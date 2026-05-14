@@ -2,7 +2,7 @@
 
 namespace Api\Controllers;
 
-use Api\Models\ReservaDAO;
+use Models\ReservaDAO;
 
 class ReservaController
 {

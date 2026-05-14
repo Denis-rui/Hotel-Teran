@@ -19,7 +19,7 @@ window.actualizarHabitaciones = (e) => {
 
     const params = new URLSearchParams(new FormData(form)).toString();
 
-    fetch(`Api/Controllers/buscar_habitaciones.php?${params}`, {
+    fetch(`Controllers/buscar_habitaciones.php?${params}`, {
       headers: { "X-Requested-With": "XMLHttpRequest" },
     })
       .then((res) => res.text())
@@ -56,7 +56,7 @@ window.cambiarEstado = async (id, nuevoEstado) => {
     formData.append("id", id);
     formData.append("estado", nuevoEstado);
 
-    const res = await fetch("Api/Controllers/habitacionesGuardar.php", {
+    const res = await fetch("Controllers/habitacionesGuardar.php", {
       method: "POST",
       body: formData,
     });

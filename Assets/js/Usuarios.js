@@ -34,7 +34,7 @@ const renderizarTablaUsuarios = (usuariosAMostrar = listaUsuarios) => {
 };
 
 const cargarUsuarios = () => {
-  fetch("./Api/Controllers/UsuarioController.php?accion=listar")
+  fetch("./Controllers/UsuarioController.php?accion=listar")
     .then((res) => res.json())
     .then((usuarios) => {
       listaUsuarios = usuarios;
@@ -46,7 +46,7 @@ const cargarUsuarios = () => {
 const eliminarUsuarioPorId = (idUsuario) => {
   if (!confirm("¿Estás seguro de eliminar este usuario?")) return;
 
-  fetch("./Api/Controllers/UsuarioController.php", {
+  fetch("./Controllers/UsuarioController.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ accion: "eliminar", id: idUsuario }),
@@ -131,7 +131,7 @@ window.registrarUsuarioNuevo = (datosUsuario) => {
     rol: datosUsuario.rol,
   };
 
-  fetch("./Api/Controllers/UsuarioController.php", {
+  fetch("./Controllers/UsuarioController.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(datos),
@@ -159,7 +159,7 @@ window.actualizarUsuarioExistente = (datosUsuario) => {
     rol: datosUsuario.rol,
   };
 
-  fetch("./Api/Controllers/UsuarioController.php", {
+  fetch("./Controllers/UsuarioController.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(datos),

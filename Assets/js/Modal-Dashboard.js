@@ -1,7 +1,7 @@
 window.abrirModalReserva = (modo = "nuevo", datos = null) => {
   const contenedor = document.getElementById("contenedorModal");
 
-  fetch("./public/views/Modal-Dashboard.php")
+  fetch("./Views/Modal-Dashboard.php")
     .then((res) => res.text())
     .then((html) => {
       contenedor.innerHTML = html;
@@ -38,7 +38,7 @@ window.abrirModalReserva = (modo = "nuevo", datos = null) => {
 
       const cargarClientes = (texto = "") => {
         fetch(
-          `./Api/Controllers/buscar_clientes_reserva.php?q=${encodeURIComponent(texto)}`,
+          `./Controllers/buscar_clientes_reserva.php?q=${encodeURIComponent(texto)}`,
         )
           .then((res) => {
             if (!res.ok) {

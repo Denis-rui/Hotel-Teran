@@ -7,8 +7,8 @@ if (file_exists($controllerFile)) {
     if (method_exists($controllerObject, $metodo)) {
         $controllerObject->$metodo($parametros);
     } else {
-        require_once "Controllers/ErrorController.php";
+        echo "Error: Método '{$metodo}' no encontrado en el controlador '{$controlador}'";
     }
 } else {
-    require_once "Controllers/ErrorController.php";
+    echo "Error: Controlador '{$controlador}' no encontrado";
 }
