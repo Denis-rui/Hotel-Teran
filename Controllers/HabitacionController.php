@@ -1,9 +1,9 @@
 <?php
 
-namespace Api\Controllers;
+namespace Controllers;
 
-use Api\Models\HabitacionDAO;
-use Api\Models\Habitacion;
+use Models\HabitacionDAO;
+use Models\Habitacion;
 
 
 class HabitacionController

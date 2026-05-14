@@ -1,8 +1,8 @@
 <?php
 
-namespace Api\Models;
+namespace Models;
 
-use Api\Config\Conexion;
+use Config\Conexion;
 
 
 class HabitacionDAO

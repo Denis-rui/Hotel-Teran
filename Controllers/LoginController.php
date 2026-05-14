@@ -1,13 +1,14 @@
 <?php
 
-namespace Api\Controllers;
+namespace Controllers;
 
 class LoginController
 {
     public function login($tipousuario, $usuario, $contrasenia)
     {
-        $usuarioDAO = new \Api\Models\UsuarioDAO();
+        $usuarioDAO = new \Models\UsuarioDAO();
         $user = $usuarioDAO->obtenerUsuarios($usuario);
+
 
         if ($user && $tipousuario == $user["rol"]  && $user["contrasenia"] == md5($contrasenia)) {
             return [

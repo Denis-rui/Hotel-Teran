@@ -2,8 +2,8 @@
 
 require_once "vendor/autoload.php";
 
-use Api\Config\Conexion;
-use Api\Controllers\ClienteController;
+use Config\Conexion;
+use Controllers\ClienteController;
 
 header('Content-Type: application/json');
 

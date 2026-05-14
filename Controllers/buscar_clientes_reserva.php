@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/../../autoload.php';
 
-use Api\Config\Conexion;
-use Api\Models\ClienteDAO;
+use Config\Conexion;
+use Models\ClienteDAO;
 
 header('Content-Type: application/json; charset=utf-8');
 

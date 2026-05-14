@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\Config;
+namespace Config;
 
 class Conexion
 {

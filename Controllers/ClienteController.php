@@ -1,8 +1,8 @@
 <?php
 
-namespace Api\Controllers;
+namespace Controllers;
 
-use Api\Models\ClienteDAO;
+use Models\ClienteDAO;
 
 class ClienteController
 {

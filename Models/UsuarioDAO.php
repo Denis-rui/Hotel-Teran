@@ -1,18 +1,20 @@
 <?php
 
-namespace Api\Models;
+namespace Models;
 
 class UsuarioDAO
 {
     private $conexion;
     public function __construct()
     {
-        $this->conexion = \Api\Config\Conexion::conectar();
+
+        $this->conexion = \Config\Conexion::conectar();
     }
 
     public function obtenerUsuarios($usuario)
     {
         try {
+
             $sql = "SELECT u.id, r.rol, u.nombre_usuario, u.contrasenia FROM rol r join usuario u on r.id = u.id_rol WHERE u.nombre_usuario = ? AND u.estado = 1";
             $statement = $this->conexion->prepare($sql);
             $statement->execute([$usuario]);
@@ -38,7 +40,7 @@ class UsuarioDAO
         }
     }
 
-    public function update(string $nombreUsuario, Usuario $usuario): bool
+    public function update(string $nombreUsuario, \Api\Models\Usuario $usuario): bool
     {
         try {
             $sql = "UPDATE usuario SET 
@@ -61,7 +63,7 @@ class UsuarioDAO
         }
     }
 
-    public function create(Usuario $usuario): bool
+    public function create(\Api\Models\Usuario $usuario): bool
     {
         try {
             // Obtener id_rol desde el nombre del rol
@@ -124,7 +126,7 @@ class UsuarioDAO
     }
 
 
-    public function updateById(int $id, Usuario $usuario): bool
+    public function updateById(int $id, \Api\Models\Usuario $usuario): bool
     {
         try {
             // Obtener id_rol desde el nombre del rol
