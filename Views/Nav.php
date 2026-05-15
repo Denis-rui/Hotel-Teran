@@ -3,7 +3,7 @@
     <div class="nav-info">
       <img
         class="imagen"
-        src="./public/assets/img/image.jpeg"
+        src="./Assets/img/image.jpeg"
         alt="Logo Teran Hotel" />
       <div class="nombre-principal">Teran Hotel</div>
 
